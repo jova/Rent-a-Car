@@ -49,11 +49,5 @@
     <Compile Include="User.cs" />
     <Compile Include="VehicleInformation.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Core\Core.csproj">
-      <Project>{7E1D6748-A71C-43FE-94A8-837A8D9FA4EB}</Project>
-      <Name>Core</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

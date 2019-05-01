@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Desktop
 {
-    public partial class Form1 : Form
+    public partial class SirketAracDurumListeleme : MetroFramework.Forms.MetroForm
     {
-        public Form1()
+        public SirketAracDurumListeleme()
         {
             InitializeComponent();
         }

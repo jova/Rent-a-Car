@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
-using DataAccess.Abstract;
-using DataAccess.Concrete;
 
 namespace Business
 {
@@ -17,16 +16,11 @@ namespace Business
 
         private static IWindsorContainer BootstrapContainer()
         {
-            return new WindsorContainer().Register(
+            //return new WindsorContainer().Register(
 
-                Component.For<ICompanyDal>().ImplementedBy<CompanyDal>(),
-                Component.For<ICustomerDal>().ImplementedBy<CustomerDal>(),
-                Component.For<IRentalinformationDal>().ImplementedBy<RentalinformationDal>(),
-                Component.For<IRoleDal>().ImplementedBy<RoleDal>(),
-                Component.For<IUserDal>().ImplementedBy<UserDal>(),
-                Component.For<IVehicleInformationDal>().ImplementedBy<VehicleInformationDal>()
-
-                );
+            //   Component.For< /*interface*/ >().ImplementedBy< /* class */ >());
+            return null;
+            //TODO: Return DUZELT
         }
 
         public static T Resolve<T>()

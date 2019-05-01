@@ -1,4 +1,4 @@
-﻿using Core;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Rentalinformation : IEntity
+    public class Rentalinformation 
     {
         public int ID { get; set; }
         public DateTime RentalRange { get; set; }
