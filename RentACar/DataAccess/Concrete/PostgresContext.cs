@@ -1,7 +1,8 @@
 ﻿using Entities;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,9 @@ namespace DataAccess.Concrete
 {
     public class PostgresContext : DbContext
     {
+
+        public PostgresContext() : base(nameOrConnectionString: "PostgresContext") { }
+
         public DbSet<Company> Companies { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Rentalinformation> Rentalinformations { get; set; }
@@ -17,10 +21,20 @@ namespace DataAccess.Concrete
         public DbSet<User> Users { get; set; }
         public DbSet<VehicleInformation> VehicleInformations { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //alttaki .net core için. .net framework versiyonu gerekiyor.
-            //optionsBuilder.UseNpgsql("Server=159.89.108.208;Port=5432;Database=soa_proje;User Id=postgres;Password=esas10burda");
+            //    modelBuilder.Entity<Company>().ToTable("Company", "public");
+            //    modelBuilder.Entity<Customer>().ToTable("Customer", "public");
+            //    modelBuilder.Entity<Rentalinformation>().ToTable("Rentalinformation", "public");
+            //    modelBuilder.Entity<Role>().ToTable("Role", "public");
+            //    modelBuilder.Entity<User>().ToTable("User", "public");
+            //    modelBuilder.Entity<VehicleInformation>().ToTable("VehicleInformation", "public");
+
+            //    modelBuilder.Conventions.Remove<StoreGeneratedIdentityKeyConvention>();
+
+            modelBuilder.HasDefaultSchema("public");
+            base.OnModelCreating(modelBuilder);
         }
+
     }
 }
