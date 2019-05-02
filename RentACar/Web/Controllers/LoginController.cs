@@ -13,9 +13,9 @@ namespace Web.Controllers
     {
         private ILoginService loginService;
 
-        public LoginController(ILoginService _loginService)
+        public LoginController()
         {
-            loginService = _loginService;
+            loginService = Business.IOCUtil.Resolve<ILoginService>();
         }
 
         public ActionResult Loginpage()
