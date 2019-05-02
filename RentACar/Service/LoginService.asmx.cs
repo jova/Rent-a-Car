@@ -3,36 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using Business.Abstract;
 
-namespace WebService
+namespace Service
 {
     /// <summary>
-    /// Summary description for RentalService
+    /// Summary description for LoginService
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
     // [System.Web.Script.Services.ScriptService]
-    public class RentalService : System.Web.Services.WebService
+    public class LoginService : System.Web.Services.WebService
     {
-        // ILoginService loginService;
-
-        public RentalService()
+        ILoginService loginService;
+        public LoginService()
         {
-
+            loginService = Business.IOCUtil.Resolve<ILoginService>();
         }
 
         [WebMethod]
-        public string HelloWorld()
+        public bool Login(string kullanici,string sifre)
         {
-            return "Hello World";
+            bool secenek =loginService.Login(kullanici, sifre);
+
+            return secenek;
         }
 
-        private ILoginService login() { 
-
-
-        
+         
 
     }
 }
