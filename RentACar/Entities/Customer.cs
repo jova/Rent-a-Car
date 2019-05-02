@@ -9,18 +9,10 @@ namespace Entities
 {
    public class Customer : IEntity
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public DateTime BirthDate { get; set; }
+        public DateTime? BirthDate { get; set; }
         public int TCNumber { get; set; }
-
-        public virtual List<Rentalinformation> Rentalinformations { get; set; }
-        public virtual List<VehicleInformation> VehicleInformations { get; set; }
-
-        public virtual Company Company { get; set; }
-
-
-
     }
 }

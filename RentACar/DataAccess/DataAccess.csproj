@@ -125,7 +125,6 @@
     <Compile Include="Abstract\ICustomerDal.cs" />
     <Compile Include="Abstract\IEntityRepository.cs" />
     <Compile Include="Abstract\IRentalinformationDal.cs" />
-    <Compile Include="Abstract\IRoleDal.cs" />
     <Compile Include="Abstract\IUserDal.cs" />
     <Compile Include="Abstract\IVehicleInformationDal.cs" />
     <Compile Include="Concrete\CompanyDal.cs" />
@@ -133,7 +132,6 @@
     <Compile Include="Concrete\EntityRepositoryBase.cs" />
     <Compile Include="Concrete\PostgresContext.cs" />
     <Compile Include="Concrete\RentalinformationDal.cs" />
-    <Compile Include="Concrete\RoleDal.cs" />
     <Compile Include="Concrete\UserDal.cs" />
     <Compile Include="Concrete\VehicleInformationDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

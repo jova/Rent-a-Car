@@ -9,14 +9,11 @@ namespace Entities
 {
     public class Company : IEntity
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string City { get; set; }
         public string Address { get; set; }
         public int VehiclesNumber { get; set; }
-        public int Point { get; set; }
-
-        public virtual List<Customer> Customers { get; set; }
-        public virtual List<VehicleInformation> VehicleInformations { get; set; }
+        public int Star { get; set; }
     }
 }
