@@ -21,8 +21,8 @@ namespace Business.Concete
 
             User user = new User();
             user.Id = 1;
-            user.UserName = "denizkilinc";
-            user.UserPassword = "5916";
+            user.UserName = "admin";
+            user.UserPassword = "admin";
 
             VehicleInformation vehicleInformation1 = new VehicleInformation();
             vehicleInformation1.Id = 1;
@@ -38,7 +38,6 @@ namespace Business.Concete
             vehicleInformation1.DailyRentalPrice = 240;
             vehicleInformation1.CompanyID = 1;
             vehicleInformation1.CustomerID = 0;
-            vehicleInformation1.RentalID = 0;
             vehicleInformation1.isRentaled = false;
 
             VehicleInformation vehicleInformation2 = new VehicleInformation();
@@ -55,7 +54,6 @@ namespace Business.Concete
             vehicleInformation2.DailyRentalPrice = 220;
             vehicleInformation2.CompanyID = 1;
             vehicleInformation2.CustomerID = 0;
-            vehicleInformation2.RentalID = 0;
             vehicleInformation2.isRentaled = false;
 
             VehicleInformation vehicleInformation3 = new VehicleInformation();
@@ -72,7 +70,6 @@ namespace Business.Concete
             vehicleInformation3.DailyRentalPrice = 340;
             vehicleInformation3.CompanyID = 1;
             vehicleInformation3.CustomerID = 0;
-            vehicleInformation3.RentalID = 0;
             vehicleInformation3.isRentaled = false;
 
             VehicleInformation vehicleInformation4 = new VehicleInformation();
@@ -89,7 +86,6 @@ namespace Business.Concete
             vehicleInformation4.DailyRentalPrice = 540;
             vehicleInformation4.CompanyID = 1;
             vehicleInformation4.CustomerID = 0;
-            vehicleInformation4.RentalID = 0;
             vehicleInformation4.isRentaled = false;
 
             VehicleInformation vehicleInformation5 = new VehicleInformation();
@@ -106,7 +102,6 @@ namespace Business.Concete
             vehicleInformation5.DailyRentalPrice = 50;
             vehicleInformation5.CompanyID = 1;
             vehicleInformation5.CustomerID = 0;
-            vehicleInformation5.RentalID = 0;
             vehicleInformation5.isRentaled = false;
         }
     }

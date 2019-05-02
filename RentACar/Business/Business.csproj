@@ -58,6 +58,7 @@
     <Compile Include="Concete\LoginManager.cs" />
     <Compile Include="Concete\RentManager.cs" />
     <Compile Include="Concete\VehicleManager.cs" />
+    <Compile Include="Concete\FillDatabase.cs" />
     <Compile Include="IOCUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
