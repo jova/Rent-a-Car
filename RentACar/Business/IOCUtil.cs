@@ -26,6 +26,7 @@ namespace Business
                 Component.For<IRentalinformationDal>().ImplementedBy<RentalinformationDal>(),          
                 Component.For<IUserDal>().ImplementedBy<UserDal>(),
                 Component.For<IVehicleInformationDal>().ImplementedBy<VehicleInformationDal>(),
+                Component.For<IFillDatabaseService>().ImplementedBy<FillDatabase>(),
                 Component.For<ILoginService>().ImplementedBy<LoginManager>()
 
                 );

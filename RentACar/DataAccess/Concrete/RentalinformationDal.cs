@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete
 {
-    public class RentalinformationDal : EntityRepositoryBase<Rentalinformation, PostgresContext>, IRentalinformationDal
+    public class RentalinformationDal : EntityRepositoryBase<Rentalinformation, SqlContext>, IRentalinformationDal
     {
     }
 }

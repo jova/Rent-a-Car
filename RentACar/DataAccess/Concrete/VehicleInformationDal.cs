@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete
 {
-    public class VehicleInformationDal : EntityRepositoryBase<VehicleInformation, PostgresContext>, IVehicleInformationDal
+    public class VehicleInformationDal : EntityRepositoryBase<VehicleInformation, SqlContext>, IVehicleInformationDal
     {
     }
 }

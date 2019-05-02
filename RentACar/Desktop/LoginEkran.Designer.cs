@@ -34,6 +34,7 @@
             this.txtSifre = new MetroFramework.Controls.MetroTextBox();
             this.btnGiris = new MetroFramework.Controls.MetroButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnDbGuncelle = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,12 +136,23 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // btnDbGuncelle
+            // 
+            this.btnDbGuncelle.Location = new System.Drawing.Point(21, 177);
+            this.btnDbGuncelle.Name = "btnDbGuncelle";
+            this.btnDbGuncelle.Size = new System.Drawing.Size(101, 22);
+            this.btnDbGuncelle.TabIndex = 7;
+            this.btnDbGuncelle.Text = "DB Güncelle";
+            this.btnDbGuncelle.UseSelectable = true;
+            this.btnDbGuncelle.Click += new System.EventHandler(this.btnDbGuncelle_Click);
+            // 
             // LoginEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(411, 202);
+            this.Controls.Add(this.btnDbGuncelle);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnGiris);
             this.Controls.Add(this.txtSifre);
@@ -166,5 +178,6 @@
         private MetroFramework.Controls.MetroTextBox txtSifre;
         private MetroFramework.Controls.MetroButton btnGiris;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private MetroFramework.Controls.MetroButton btnDbGuncelle;
     }
 }

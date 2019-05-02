@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ICustomerService.cs" />
+    <Compile Include="Abstract\IFillDatabaseService.cs" />
     <Compile Include="Abstract\ILoginService.cs" />
     <Compile Include="Abstract\IRentService.cs" />
     <Compile Include="Abstract\IVehicleService.cs" />
@@ -68,7 +69,7 @@
       <Name>Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{cb91493a-5931-4607-8f21-07b83fc9d485}</Project>
+      <Project>{94AA346D-7D8D-4772-89BB-A4B9EC98A4D8}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">

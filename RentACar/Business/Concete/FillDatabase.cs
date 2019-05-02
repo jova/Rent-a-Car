@@ -1,14 +1,27 @@
-﻿using Entities;
+﻿using Business.Abstract;
+using Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccess.Abstract;
 
 namespace Business.Concete
 {
-    public class FillDatabase
+    public class FillDatabase : IFillDatabaseService
     {
+        ICompanyDal companyDal;
+        IUserDal userDal;
+        IVehicleInformationDal vehicleDal;
+
+        public FillDatabase()
+        {
+            companyDal = IOCUtil.Resolve<ICompanyDal>();
+            userDal = IOCUtil.Resolve<IUserDal>();
+            vehicleDal = IOCUtil.Resolve<IVehicleInformationDal>();
+        }
+
         public void Fill() {
 
             Company company = new Company();
@@ -103,6 +116,15 @@ namespace Business.Concete
             vehicleInformation5.CompanyID = 1;
             vehicleInformation5.CustomerID = 0;
             vehicleInformation5.isRentaled = false;
+
+            companyDal.Add(company);
+            userDal.Add(user);
+            vehicleDal.Add(vehicleInformation1);
+            vehicleDal.Add(vehicleInformation2);
+            vehicleDal.Add(vehicleInformation3);
+            vehicleDal.Add(vehicleInformation4);
+            vehicleDal.Add(vehicleInformation5);
+
         }
     }
 }
