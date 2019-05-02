@@ -9,8 +9,7 @@ using System.Threading.Tasks;
 namespace Entities
 {
    public class VehicleInformation : IEntity
-    {
-
+    { 
         public int Id { get; set; }
         public string Name { get; set; }
         public string Model { get; set; }
@@ -24,8 +23,6 @@ namespace Entities
         public int DailyRentalPrice { get; set; }
         public int CompanyID { get; set; }
         public int CustomerID { get; set; }
-        public int RentalID { get; set; }
         public bool isRentaled { get; set; }
-
     }
 }

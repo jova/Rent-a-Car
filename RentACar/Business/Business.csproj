@@ -50,8 +50,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\ICustomerService.cs" />
     <Compile Include="Abstract\ILoginService.cs" />
+    <Compile Include="Abstract\IRentService.cs" />
+    <Compile Include="Abstract\IVehicleService.cs" />
+    <Compile Include="Concete\CustomerManager.cs" />
     <Compile Include="Concete\LoginManager.cs" />
+    <Compile Include="Concete\RentManager.cs" />
+    <Compile Include="Concete\VehicleManager.cs" />
     <Compile Include="IOCUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
