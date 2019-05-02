@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Entities.User
+@{
     Layout = null;
 }
 
@@ -30,40 +31,49 @@
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
-                <form class="login100-form validate-form">
-                    <span class="login100-form-title p-b-55">
-                        GİRİŞ
-                    </span>
 
-                    <div class="wrap-input100 validate-input m-b-16" data-validate="Valid email is required: ex@abc.xyz">
-                        <input class="input100" type="text" name="email" placeholder="Mail">
-                        <span class="focus-input100"></span>
-                        <span class="symbol-input100">
-                            <span class="lnr lnr-envelope"></span>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="login100-form validate-form">
+                        <span class="login100-form-title p-b-55">
+                            GİRİŞ
                         </span>
+
+                        <div class="wrap-input100 validate-input m-b-16" data-validate="Valid email is required: ex@abc.xyz">
+                            @*<input class="input100" type="text" name="email" placeholder="Mail">*@
+                            @Html.TextBoxFor(model => model.UserName, new { @class = "input100", placeholder = "Mail", type = "text", name = "email" })
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <span class="lnr lnr-envelope"></span>
+                            </span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
+                            @*<input class="input100" type="password" name="pass" placeholder="Şifre">*@
+                            @Html.TextBoxFor(model => model.UserPassword, new { @class = "input100", placeholder = "Şifre", type = "password", name = "pass" })
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <span class="lnr lnr-lock"></span>
+                            </span>
+                        </div>
+
+                        <div class="contact100-form-checkbox m-l-4">
+                            <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                            <label class="label-checkbox100" for="ckb1">
+                                Beni Hatırla
+                            </label>
+                        </div>
+
+                        <div class="container-login100-form-btn p-t-25">
+                            <input class="login100-form-btn" value="Giriş Yap" type="submit"/>
+                        </div>
                     </div>
 
-                    <div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
-                        <input class="input100" type="password" name="pass" placeholder="Şifre">
-                        <span class="focus-input100"></span>
-                        <span class="symbol-input100">
-                            <span class="lnr lnr-lock"></span>
-                        </span>
-                    </div>
+                }
 
-                    <div class="contact100-form-checkbox m-l-4">
-                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-                        <label class="label-checkbox100" for="ckb1">
-                            Beni Hatırla
-                        </label>
-                    </div>
 
-                    <div class="container-login100-form-btn p-t-25">
-                        <button class="login100-form-btn">
-                            Giriş Yap
-                        </button>
-                    </div>
-                </form>
             </div>
         </div>
     </div>

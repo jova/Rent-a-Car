@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,16 +24,16 @@ namespace Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Loginpage(LoginViewModel loginViewModel)
+        public ActionResult Loginpage(User user)
         {
-            var result = loginService.Login(loginViewModel.Mail, loginViewModel.Password);
+            //var result = loginService.Login(user.UserName, user.UserPassword);
 
-            if (result)
-            {
-                //kendi sayfasına yönlendirilecek
-                return View();
-            }
-            else return View();
+            //if (result)
+            //{
+            //    //kendi sayfasına yönlendirilecek
+            //    return View();
+            //}
+            return View();
         }
     }
 }
