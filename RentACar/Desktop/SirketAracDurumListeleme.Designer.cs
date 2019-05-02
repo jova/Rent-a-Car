@@ -38,7 +38,7 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(285, 317);
+            this.metroButton1.Location = new System.Drawing.Point(305, 406);
             this.metroButton1.Margin = new System.Windows.Forms.Padding(2);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(153, 60);
@@ -86,7 +86,7 @@
             this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(721, 253);
+            this.metroGrid1.Size = new System.Drawing.Size(721, 319);
             this.metroGrid1.TabIndex = 51;
             // 
             // SirketAracDurumListeleme

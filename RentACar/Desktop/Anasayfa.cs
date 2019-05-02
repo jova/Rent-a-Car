@@ -66,5 +66,11 @@ namespace Desktop
             MdiFormsClose();
             MdiFormsShow(MdiFormsStyle(new SirketAracDurumListeleme()));
         }
+
+        private void araçTakipToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MdiFormsClose();
+            MdiFormsShow(MdiFormsStyle(new AracTakibi()));
+        }
     }
 }

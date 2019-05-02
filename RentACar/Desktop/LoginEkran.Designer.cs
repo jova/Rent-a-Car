@@ -34,13 +34,15 @@
             this.txtSifre = new MetroFramework.Controls.MetroTextBox();
             this.btnGiris = new MetroFramework.Controls.MetroButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(154, 77);
+            this.metroLabel1.Location = new System.Drawing.Point(156, 62);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(82, 19);
             this.metroLabel1.TabIndex = 3;
@@ -49,7 +51,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(198, 116);
+            this.metroLabel2.Location = new System.Drawing.Point(204, 101);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(38, 19);
             this.metroLabel2.TabIndex = 3;
@@ -70,7 +72,7 @@
             this.txtKullanici.CustomButton.UseSelectable = true;
             this.txtKullanici.CustomButton.Visible = false;
             this.txtKullanici.Lines = new string[0];
-            this.txtKullanici.Location = new System.Drawing.Point(261, 74);
+            this.txtKullanici.Location = new System.Drawing.Point(261, 59);
             this.txtKullanici.MaxLength = 32767;
             this.txtKullanici.Name = "txtKullanici";
             this.txtKullanici.PasswordChar = '\0';
@@ -100,7 +102,7 @@
             this.txtSifre.CustomButton.UseSelectable = true;
             this.txtSifre.CustomButton.Visible = false;
             this.txtSifre.Lines = new string[0];
-            this.txtSifre.Location = new System.Drawing.Point(261, 113);
+            this.txtSifre.Location = new System.Drawing.Point(261, 98);
             this.txtSifre.MaxLength = 32767;
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.PasswordChar = '*';
@@ -126,11 +128,33 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::Desktop.Properties.Resources.images3;
             this.pictureBox1.Location = new System.Drawing.Point(21, 63);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(101, 108);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Yönetici",
+            "Çalışan"});
+            this.comboBox1.Location = new System.Drawing.Point(260, 131);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 7;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(143, 133);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(103, 19);
+            this.metroLabel3.TabIndex = 8;
+            this.metroLabel3.Text = "Yönetici/Çalışan:";
             // 
             // LoginEkran
             // 
@@ -138,6 +162,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(411, 202);
+            this.Controls.Add(this.metroLabel3);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnGiris);
             this.Controls.Add(this.txtSifre);
@@ -163,5 +189,7 @@
         private MetroFramework.Controls.MetroTextBox txtSifre;
         private MetroFramework.Controls.MetroButton btnGiris;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
     }
 }

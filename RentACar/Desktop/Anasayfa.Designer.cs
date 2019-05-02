@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.AracListeleme = new System.Windows.Forms.ToolStripMenuItem();
+            this.araçTakipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AracKiralama = new System.Windows.Forms.ToolStripMenuItem();
             this.MusteriIstekleri = new System.Windows.Forms.ToolStripMenuItem();
-            this.AracListeleme = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,14 +42,30 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AracKiralama,
             this.MusteriIstekleri,
-            this.AracListeleme});
+            this.AracListeleme,
+            this.araçTakipToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(17, 60);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(767, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(873, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            // 
+            // AracListeleme
+            // 
+            this.AracListeleme.ImageTransparentColor = System.Drawing.Color.Transparent;
+            this.AracListeleme.Name = "AracListeleme";
+            this.AracListeleme.Size = new System.Drawing.Size(69, 20);
+            this.AracListeleme.Text = "Listeleme";
+            this.AracListeleme.Click += new System.EventHandler(this.AracListeleme_Click);
+            // 
+            // araçTakipToolStripMenuItem
+            // 
+            this.araçTakipToolStripMenuItem.Name = "araçTakipToolStripMenuItem";
+            this.araçTakipToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.araçTakipToolStripMenuItem.Text = "Araç Takip";
+            this.araçTakipToolStripMenuItem.Click += new System.EventHandler(this.araçTakipToolStripMenuItem_Click);
             // 
             // AracKiralama
             // 
@@ -65,21 +82,13 @@
             this.MusteriIstekleri.Text = "Müsteri İstekleri";
             this.MusteriIstekleri.Click += new System.EventHandler(this.MusteriIstekleri_Click);
             // 
-            // AracListeleme
-            // 
-            this.AracListeleme.ImageTransparentColor = System.Drawing.Color.Transparent;
-            this.AracListeleme.Name = "AracListeleme";
-            this.AracListeleme.Size = new System.Drawing.Size(69, 20);
-            this.AracListeleme.Text = "Listeleme";
-            this.AracListeleme.Click += new System.EventHandler(this.AracListeleme_Click);
-            // 
             // Anasayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(801, 545);
+            this.ClientSize = new System.Drawing.Size(907, 658);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.IsMdiContainer = true;
@@ -105,6 +114,7 @@
         private System.Windows.Forms.ToolStripMenuItem AracKiralama;
         private System.Windows.Forms.ToolStripMenuItem MusteriIstekleri;
         private System.Windows.Forms.ToolStripMenuItem AracListeleme;
+        private System.Windows.Forms.ToolStripMenuItem araçTakipToolStripMenuItem;
     }
 }
 
