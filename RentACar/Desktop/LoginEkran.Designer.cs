@@ -34,8 +34,6 @@
             this.txtSifre = new MetroFramework.Controls.MetroTextBox();
             this.btnGiris = new MetroFramework.Controls.MetroButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,7 +117,7 @@
             // 
             // btnGiris
             // 
-            this.btnGiris.Location = new System.Drawing.Point(315, 158);
+            this.btnGiris.Location = new System.Drawing.Point(315, 140);
             this.btnGiris.Name = "btnGiris";
             this.btnGiris.Size = new System.Drawing.Size(66, 22);
             this.btnGiris.TabIndex = 5;
@@ -137,34 +135,12 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Yönetici",
-            "Çalışan"});
-            this.comboBox1.Location = new System.Drawing.Point(260, 131);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 7;
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(143, 133);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(103, 19);
-            this.metroLabel3.TabIndex = 8;
-            this.metroLabel3.Text = "Yönetici/Çalışan:";
-            // 
             // LoginEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(411, 202);
-            this.Controls.Add(this.metroLabel3);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnGiris);
             this.Controls.Add(this.txtSifre);
@@ -190,7 +166,5 @@
         private MetroFramework.Controls.MetroTextBox txtSifre;
         private MetroFramework.Controls.MetroButton btnGiris;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
     }
 }

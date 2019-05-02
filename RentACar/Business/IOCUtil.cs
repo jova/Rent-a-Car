@@ -23,8 +23,7 @@ namespace Business
 
                 Component.For<ICompanyDal>().ImplementedBy<CompanyDal>(),
                 Component.For<ICustomerDal>().ImplementedBy<CustomerDal>(),
-                Component.For<IRentalinformationDal>().ImplementedBy<RentalinformationDal>(),
-                Component.For<IRoleDal>().ImplementedBy<RoleDal>(),
+                Component.For<IRentalinformationDal>().ImplementedBy<RentalinformationDal>(),          
                 Component.For<IUserDal>().ImplementedBy<UserDal>(),
                 Component.For<IVehicleInformationDal>().ImplementedBy<VehicleInformationDal>(),
                 Component.For<ILoginService>().ImplementedBy<LoginManager>()
