@@ -1,0 +1,25 @@
+﻿@model Entities.User
+<div class="row">
+    <div class="col-md-12">
+        <h2>Yönetici Girişi Yap</h2>
+    </div>
+</div>
+
+<div class="jumbotron">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+    <form>
+        <h4>Kullanıcı Adı</h4>@* <input type="text" id="login" class="fadeIn second" name="login" placeholder="username">*@
+        @Html.TextBoxFor(model => model.UserName, new {placeholder = "Kullanıcı Adı", type = "text", name = "email" })
+        <br />
+        <h4>Şifre</h4> @*<input type="text" id="password" class="fadeIn third" name="login" placeholder="password">*@
+        @Html.TextBoxFor(model => model.UserPassword, new {placeholder = "Şifre", type = "password", name = "pass" })
+        <br />
+        <input type="submit" class="fadeIn fourth" value="Giriş Yap">
+    </form>
+
+    }
+
+</div>

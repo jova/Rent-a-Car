@@ -13,6 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desktop", "Desktop\Desktop.
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{A40F7823-BE55-4EBD-9015-A5D61173FEF3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F64857BE-379B-40DE-B396-927081C4FC46} = {F64857BE-379B-40DE-B396-927081C4FC46}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{4ECD9987-F916-433D-97E9-657F8D910DF9}"
 EndProject

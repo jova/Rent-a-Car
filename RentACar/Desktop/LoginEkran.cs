@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using Business.Abstract;
 using Desktop.LoginServiceReference;
 
-
 namespace Desktop
 {
     public partial class LoginEkran : MetroFramework.Forms.MetroForm
