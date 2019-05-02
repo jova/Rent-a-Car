@@ -25,7 +25,7 @@ namespace Service
 
         [WebMethod]
         public bool Login(string kullanici,string sifre)
-        {
+        { 
             bool secenek =loginService.Login(kullanici, sifre);
 
             return secenek;

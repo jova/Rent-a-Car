@@ -75,6 +75,8 @@
   <ItemGroup>
     <Content Include="CustomerService.asmx" />
     <Content Include="LoginService.asmx" />
+    <Content Include="RentService.asmx" />
+    <Content Include="VehicleServiceService.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -87,6 +89,14 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RentService.asmx.cs">
+      <DependentUpon>RentService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VehicleServiceService.asmx.cs">
+      <DependentUpon>VehicleServiceService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -110,6 +120,9 @@
       <Project>{4ecd9987-f916-433d-97e9-657f8d910df9}</Project>
       <Name>Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

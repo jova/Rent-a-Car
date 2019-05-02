@@ -75,6 +75,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\MusteriServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="MusteriIstekleri.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +144,10 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\LoginServiceReference\LoginService.wsdl" />
+    <None Include="Connected Services\MusteriServiceReference\CustomerService.wsdl" />
+    <None Include="Connected Services\MusteriServiceReference\Desktop.MusteriServiceReference.AddResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -160,6 +169,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\MusteriServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\MusteriServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\MusteriServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="resim\images3.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +182,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\LoginServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\MusteriServiceReference\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Business\Business.csproj">

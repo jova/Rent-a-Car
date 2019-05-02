@@ -1,58 +1,46 @@
-﻿using Entities;
+﻿using Business.Abstract;
+using Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
 
-using Business.Abstract;
-
 namespace Service
 {
     /// <summary>
-    /// Summary description for CustomerService
+    /// Summary description for RentService
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
     // [System.Web.Script.Services.ScriptService]
-    public class CustomerService : System.Web.Services.WebService
+    public class RentService : System.Web.Services.WebService
     {
-
-       
-
-        ICustomerService customerService;
-
-        public CustomerService()
+        IRentService rentService;
+        public RentService()
         {
-            customerService = Business.IOCUtil.Resolve<ICustomerService>();
-
-
+            rentService= Business.IOCUtil.Resolve<IRentService>();
         }
 
-
-   
+       
+       
+        
 
         [WebMethod]
-        public Rentalinformation RentRequest(int TCNumber, int vehicleId, int howManyDays)
+        public Rentalinformation Get(int rentalId)
         {
-            Rentalinformation rentalinformation = customerService.RentRequest(TCNumber, vehicleId, howManyDays);
-
+            Rentalinformation rentalinformation = rentService.Get(rentalId);
             return rentalinformation;
         }
 
-
         [WebMethod]
-        public void Add(Customer customer)
+        public List<Rentalinformation> GetAll()
         {
-
-            customerService.Add(customer);      
+            List<Rentalinformation> rentalinformations = rentService.GetAll();
+            return rentalinformations;
         }
-       
-
-
-
 
 
     }
