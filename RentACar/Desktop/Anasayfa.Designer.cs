@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.MusteriIstekleri = new System.Windows.Forms.ToolStripMenuItem();
             this.AracListeleme = new System.Windows.Forms.ToolStripMenuItem();
             this.araçTakipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.AracKiralama = new System.Windows.Forms.ToolStripMenuItem();
-            this.MusteriIstekleri = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,7 +39,6 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AracKiralama,
             this.MusteriIstekleri,
             this.AracListeleme,
             this.araçTakipToolStripMenuItem});
@@ -51,6 +49,13 @@
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            // 
+            // MusteriIstekleri
+            // 
+            this.MusteriIstekleri.Name = "MusteriIstekleri";
+            this.MusteriIstekleri.Size = new System.Drawing.Size(102, 20);
+            this.MusteriIstekleri.Text = "Müsteri İstekleri";
+            this.MusteriIstekleri.Click += new System.EventHandler(this.MusteriIstekleri_Click);
             // 
             // AracListeleme
             // 
@@ -66,21 +71,6 @@
             this.araçTakipToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.araçTakipToolStripMenuItem.Text = "Araç Takip";
             this.araçTakipToolStripMenuItem.Click += new System.EventHandler(this.araçTakipToolStripMenuItem_Click);
-            // 
-            // AracKiralama
-            // 
-            this.AracKiralama.ImageTransparentColor = System.Drawing.Color.Transparent;
-            this.AracKiralama.Name = "AracKiralama";
-            this.AracKiralama.Size = new System.Drawing.Size(92, 20);
-            this.AracKiralama.Text = "Araç Kiralama";
-            this.AracKiralama.Click += new System.EventHandler(this.AracKiralama_Click);
-            // 
-            // MusteriIstekleri
-            // 
-            this.MusteriIstekleri.Name = "MusteriIstekleri";
-            this.MusteriIstekleri.Size = new System.Drawing.Size(102, 20);
-            this.MusteriIstekleri.Text = "Müsteri İstekleri";
-            this.MusteriIstekleri.Click += new System.EventHandler(this.MusteriIstekleri_Click);
             // 
             // Anasayfa
             // 
@@ -111,7 +101,6 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem AracKiralama;
         private System.Windows.Forms.ToolStripMenuItem MusteriIstekleri;
         private System.Windows.Forms.ToolStripMenuItem AracListeleme;
         private System.Windows.Forms.ToolStripMenuItem araçTakipToolStripMenuItem;

@@ -92,12 +92,6 @@
     <Compile Include="SirketAracDurumListeleme.Designer.cs">
       <DependentUpon>SirketAracDurumListeleme.cs</DependentUpon>
     </Compile>
-    <Compile Include="AracKiralama.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AracKiralama.Designer.cs">
-      <DependentUpon>AracKiralama.cs</DependentUpon>
-    </Compile>
     <Compile Include="Anasayfa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,9 +114,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SirketAracDurumListeleme.resx">
       <DependentUpon>SirketAracDurumListeleme.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AracKiralama.resx">
-      <DependentUpon>AracKiralama.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Anasayfa.resx">
       <DependentUpon>Anasayfa.cs</DependentUpon>
