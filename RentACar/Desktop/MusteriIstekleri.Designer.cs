@@ -31,20 +31,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // metroButton1
-            // 
-            this.metroButton1.Location = new System.Drawing.Point(303, 387);
-            this.metroButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(153, 60);
-            this.metroButton1.TabIndex = 49;
-            this.metroButton1.Text = "Kiralama İstekleri Listele";
-            this.metroButton1.UseSelectable = true;
             // 
             // metroGrid1
             // 
@@ -89,11 +79,21 @@
             this.metroGrid1.Size = new System.Drawing.Size(721, 297);
             this.metroGrid1.TabIndex = 50;
             // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(300, 448);
+            this.metroButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(153, 60);
+            this.metroButton1.TabIndex = 49;
+            this.metroButton1.Text = "İstek Onayla";
+            this.metroButton1.UseSelectable = true;
+            // 
             // MusteriIstekleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(911, 523);
+            this.ClientSize = new System.Drawing.Size(757, 598);
             this.ControlBox = false;
             this.Controls.Add(this.metroGrid1);
             this.Controls.Add(this.metroButton1);
@@ -101,14 +101,14 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MusteriIstekleri";
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
-            this.Text = "Musteri Kiralama İstekleri";
+            this.Text = "Müşteri Kiralama İstekleri";
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroGrid metroGrid1;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }

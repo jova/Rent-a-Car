@@ -5,35 +5,47 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using Web.LoginReference;
 
 namespace Web.Controllers
 {
     public class LoginController : Controller
     {
-        private ILoginService loginService;
+        private LoginServiceSoapClient loginService;
 
         public LoginController()
         {
-            loginService = Business.IOCUtil.Resolve<ILoginService>();
+            loginService = new LoginServiceSoapClient();
         }
 
-        public ActionResult Loginpage()
+        public ActionResult Index()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Loginpage(User user)
+        public ActionResult Index(User user)
         {
-            var result = loginService.Login(user.UserName, user.UserPassword);
+            bool result = loginService.Login(user.UserName, user.UserPassword);
 
             if (result)
             {
-                //kendi sayfasına yönlendirilecek
+                Response.SetCookie(new HttpCookie("loggedIn", "true"));
+                return RedirectToAction("Admin");
+            }
+            else return Redirect("/");
+        }
+
+        public ActionResult Admin()
+        {
+            if (Request.Cookies.AllKeys.Contains("loggedIn"))
+            {
                 return View();
             }
-            return View();
+            else
+            {
+                return Redirect("/");
+            }
         }
     }
 }
