@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Business.Abstract;
+using Business.Concete;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using DataAccess.Abstract;
@@ -25,6 +27,7 @@ namespace Business
                 Component.For<IRoleDal>().ImplementedBy<RoleDal>(),
                 Component.For<IUserDal>().ImplementedBy<UserDal>(),
                 Component.For<IVehicleInformationDal>().ImplementedBy<VehicleInformationDal>(),
+                Component.For<ILoginService>().ImplementedBy<LoginManager>()
 
                 );
         }

@@ -26,13 +26,13 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Loginpage(User user)
         {
-            //var result = loginService.Login(user.UserName, user.UserPassword);
+            var result = loginService.Login(user.UserName, user.UserPassword);
 
-            //if (result)
-            //{
-            //    //kendi sayfasına yönlendirilecek
-            //    return View();
-            //}
+            if (result)
+            {
+                //kendi sayfasına yönlendirilecek
+                return View();
+            }
             return View();
         }
     }
