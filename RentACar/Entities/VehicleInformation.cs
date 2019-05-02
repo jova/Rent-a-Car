@@ -1,6 +1,7 @@
 ﻿using Core;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,8 @@ namespace Entities
 {
    public class VehicleInformation : IEntity
     {
-        public int ID { get; set; }
+
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Model { get; set; }
         public string Address { get; set; }
@@ -20,9 +22,10 @@ namespace Entities
         public int BaggageVolume { get; set; }
         public int SeatingCapacity { get; set; }
         public int DailyRentalPrice { get; set; }
+        public int CompanyID { get; set; }
+        public int CustomerID { get; set; }
+        public int RentalID { get; set; }
+        public bool isRentaled { get; set; }
 
-        public virtual List<Rentalinformation> Rentalinformations { get; set; }
-        public virtual Company Company { get; set; }
-        public virtual Customer Customer { get; set; }
     }
 }

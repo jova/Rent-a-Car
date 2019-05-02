@@ -9,15 +9,13 @@ namespace Entities
 {
     public class Rentalinformation : IEntity
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public DateTime RentalRange { get; set; }
         public int StartKm { get; set; }
         public int LastKm { get; set; }
         public int Payment { get; set; }
         public bool IsActive { get; set; }
-
-        public virtual Customer Customer { get; set; }
-        public virtual VehicleInformation VehicleInformation { get; set; }
-
+        public int VehicleID { get; set; }
+        public int CustomerID { get; set; }
     }
 }
