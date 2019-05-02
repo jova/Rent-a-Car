@@ -8,6 +8,6 @@ namespace Business.Abstract
 {
     public interface ILoginService
     {
-        bool Login(string username, string password);
+        bool Login(string username, string password, int roleID);
     }
 }

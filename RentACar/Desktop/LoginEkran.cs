@@ -16,5 +16,9 @@ namespace Desktop
         {
             InitializeComponent();
         }
+
+        private void btnGiris_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

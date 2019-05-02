@@ -136,11 +136,6 @@
     <Compile Include="Concrete\RoleDal.cs" />
     <Compile Include="Concrete\UserDal.cs" />
     <Compile Include="Concrete\VehicleInformationDal.cs" />
-    <Compile Include="Migrations\201905012335472_db-update-dotnetframework.cs" />
-    <Compile Include="Migrations\201905012335472_db-update-dotnetframework.Designer.cs">
-      <DependentUpon>201905012335472_db-update-dotnetframework.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -158,9 +153,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905012335472_db-update-dotnetframework.resx">
-      <DependentUpon>201905012335472_db-update-dotnetframework.cs</DependentUpon>
-    </EmbeddedResource>
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
