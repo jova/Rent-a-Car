@@ -18,12 +18,11 @@ namespace Business.Concete
             this.UserDal = accountDal;
         }
 
-        public bool Login(string username, string password, int roleID)
+        public bool Login(string username, string password)
         {
             User user = UserDal.Get(x => x.UserName == username);
 
             if (user == null) return false;
-            if (user.RoleID != roleID) return false;
 
             if (user.UserPassword == password) return true;
             else return false;
