@@ -15,8 +15,8 @@ namespace Entities
         public string Name { get; set; }
         public string Model { get; set; }
         public string Address { get; set; }
-        public int LicenseAge { get; set; }
         public int MinLicenseAge { get; set; }
+        public int MinAge { get; set; }
         public int DailyBorderKm { get; set; }
         public bool Airbag { get; set; }
         public int BaggageVolume { get; set; }
