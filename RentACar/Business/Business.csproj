@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ILoginService.cs" />
+    <Compile Include="Concete\FillDatabase.cs" />
     <Compile Include="Concete\LoginManager.cs" />
     <Compile Include="IOCUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
