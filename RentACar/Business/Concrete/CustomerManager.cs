@@ -28,6 +28,11 @@ namespace Business.Concete
             if (checkCustom != null) customerDal.Add(customer);
         }
 
+        public Customer Get(int customerId)
+        {
+            return customerDal.Get(x => x.Id == customerId);
+        }
+
         public Rentalinformation RentRequest(int TCNumber, int vehicleId, int howManyDays)
         {
             Customer customer = customerDal.Get(x => x.TCNumber == TCNumber);

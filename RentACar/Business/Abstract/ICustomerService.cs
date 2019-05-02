@@ -10,6 +10,7 @@ namespace Business.Abstract
     public interface ICustomerService
     {
         void Add(Customer customer);
+        Customer Get(int customerId);
         Rentalinformation RentRequest(int TCNumber, int vehicleId, int howManyDays);
     }
 }
