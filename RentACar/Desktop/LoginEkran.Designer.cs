@@ -81,7 +81,7 @@
             this.txtKullanici.SelectionStart = 0;
             this.txtKullanici.ShortcutsEnabled = true;
             this.txtKullanici.Size = new System.Drawing.Size(120, 22);
-            this.txtKullanici.TabIndex = 4;
+            this.txtKullanici.TabIndex = 1;
             this.txtKullanici.UseSelectable = true;
             this.txtKullanici.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtKullanici.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -111,7 +111,7 @@
             this.txtSifre.SelectionStart = 0;
             this.txtSifre.ShortcutsEnabled = true;
             this.txtSifre.Size = new System.Drawing.Size(120, 22);
-            this.txtSifre.TabIndex = 4;
+            this.txtSifre.TabIndex = 2;
             this.txtSifre.UseSelectable = true;
             this.txtSifre.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtSifre.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -121,7 +121,7 @@
             this.btnGiris.Location = new System.Drawing.Point(315, 140);
             this.btnGiris.Name = "btnGiris";
             this.btnGiris.Size = new System.Drawing.Size(66, 22);
-            this.btnGiris.TabIndex = 5;
+            this.btnGiris.TabIndex = 3;
             this.btnGiris.Text = "Giriş";
             this.btnGiris.UseSelectable = true;
             this.btnGiris.Click += new System.EventHandler(this.btnGiris_Click);
@@ -141,7 +141,7 @@
             this.btnDbGuncelle.Location = new System.Drawing.Point(21, 177);
             this.btnDbGuncelle.Name = "btnDbGuncelle";
             this.btnDbGuncelle.Size = new System.Drawing.Size(101, 22);
-            this.btnDbGuncelle.TabIndex = 7;
+            this.btnDbGuncelle.TabIndex = 4;
             this.btnDbGuncelle.Text = "DB Güncelle";
             this.btnDbGuncelle.UseSelectable = true;
             this.btnDbGuncelle.Click += new System.EventHandler(this.btnDbGuncelle_Click);

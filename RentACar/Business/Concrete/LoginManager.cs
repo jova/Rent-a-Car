@@ -25,7 +25,7 @@ namespace Business.Concete
 
             if (user == null) return false;
 
-            user.UserPassword = FormsAuthentication.HashPasswordForStoringInConfigFile(password, "MD5");
+            password = FormsAuthentication.HashPasswordForStoringInConfigFile(password, "MD5");
             if (user.UserPassword == password) return true;
             else return false;
         }
