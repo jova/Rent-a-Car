@@ -55,12 +55,6 @@ namespace Desktop
             MdiFormsShow(MdiFormsStyle(new MusteriIstekleri()));
         }
 
-        private void AracKiralama_Click(object sender, EventArgs e)
-        {
-            MdiFormsClose();
-            MdiFormsShow(MdiFormsStyle(new AracKiralama()));
-        }
-
         private void AracListeleme_Click(object sender, EventArgs e)
         {
             MdiFormsClose();

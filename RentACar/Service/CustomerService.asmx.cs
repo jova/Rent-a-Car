@@ -19,21 +19,13 @@ namespace Service
     // [System.Web.Script.Services.ScriptService]
     public class CustomerService : System.Web.Services.WebService
     {
-
-       
-
         ICustomerService customerService;
 
         public CustomerService()
         {
             customerService = Business.IOCUtil.Resolve<ICustomerService>();
-
-
         }
-
-
    
-
         [WebMethod]
         public Rentalinformation RentRequest(int TCNumber, int vehicleId, int howManyDays)
         {
@@ -42,18 +34,16 @@ namespace Service
             return rentalinformation;
         }
 
-
         [WebMethod]
         public void Add(Customer customer)
         {
-
             customerService.Add(customer);      
         }
-       
 
-
-
-
-
+        [WebMethod]
+        public Customer Get(int customerId)
+        {
+           return customerService.Get(customerId);
+        }
     }
 }

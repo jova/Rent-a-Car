@@ -43,22 +43,30 @@ namespace Business.Concete
             rental.IsActive = true;
             rentalDal.Update(rental);
 
+            List<Rentalinformation> rents = rentalDal.GetList(x => x.Id != rental.Id && x.VehicleID == vehicle.Id);
+            foreach (var rent in rents)
+            {
+                rentalDal.Delete(rent);
+            }
+
             vehicle.CustomerID = customerId;
             vehicle.isRentaled = true;
+
+            vehicleDal.Update(vehicle);
             return true;
         }
 
-        public bool UnRentACar(int vehicleId)
+        public bool UnRentACar(int rentId)
         {
-            VehicleInformation vehicle = Get(vehicleId);
-            if (vehicle == null) return false;
-
-            Rentalinformation rental = rentalDal.Get(x => x.VehicleID == vehicleId);
+            Rentalinformation rental = rentalDal.Get(x => x.Id == rentId);
             rentalDal.Delete(rental);
+
+            VehicleInformation vehicle = Get(rental.VehicleID);
 
             vehicle.CustomerID = 0;
             vehicle.isRentaled = false;
 
+            vehicleDal.Update(vehicle);
             return true;
         }
     }

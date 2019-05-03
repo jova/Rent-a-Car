@@ -25,7 +25,7 @@ namespace Business.Concete
         public void Add(Customer customer)
         {
             Customer checkCustom = customerDal.Get(x => x.TCNumber == customer.TCNumber);
-            if (checkCustom != null) customerDal.Add(customer);
+            if (checkCustom == null) customerDal.Add(customer);
         }
 
         public Customer Get(int customerId)
