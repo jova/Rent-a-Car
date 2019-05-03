@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Desktop.MusteriServiceReference;
+
 
 namespace Desktop
 {
@@ -15,6 +17,15 @@ namespace Desktop
         public MusteriIstekleri()
         {
             InitializeComponent();
+        }
+
+        private void btnIstekOnayla_Click(object sender, EventArgs e)
+        {
+          
+
+
+            //VehicleServiceServiceSoapClient Vehicle = new VehicleServiceServiceSoapClient();
+            //Vehicle.GetAll();
         }
     }
 }

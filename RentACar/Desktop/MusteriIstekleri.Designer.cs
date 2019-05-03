@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.btnIstekOnayla = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,27 +76,28 @@
             this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(721, 297);
+            this.metroGrid1.Size = new System.Drawing.Size(634, 142);
             this.metroGrid1.TabIndex = 50;
             // 
-            // metroButton1
+            // btnIstekOnayla
             // 
-            this.metroButton1.Location = new System.Drawing.Point(300, 448);
-            this.metroButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(153, 60);
-            this.metroButton1.TabIndex = 49;
-            this.metroButton1.Text = "İstek Onayla";
-            this.metroButton1.UseSelectable = true;
+            this.btnIstekOnayla.Location = new System.Drawing.Point(260, 215);
+            this.btnIstekOnayla.Margin = new System.Windows.Forms.Padding(2);
+            this.btnIstekOnayla.Name = "btnIstekOnayla";
+            this.btnIstekOnayla.Size = new System.Drawing.Size(153, 60);
+            this.btnIstekOnayla.TabIndex = 49;
+            this.btnIstekOnayla.Text = "İstek Onayla";
+            this.btnIstekOnayla.UseSelectable = true;
+            this.btnIstekOnayla.Click += new System.EventHandler(this.btnIstekOnayla_Click);
             // 
             // MusteriIstekleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(757, 598);
+            this.ClientSize = new System.Drawing.Size(675, 382);
             this.ControlBox = false;
             this.Controls.Add(this.metroGrid1);
-            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.btnIstekOnayla);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MusteriIstekleri";
@@ -109,6 +110,6 @@
 
         #endregion
         private MetroFramework.Controls.MetroGrid metroGrid1;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton btnIstekOnayla;
     }
 }
