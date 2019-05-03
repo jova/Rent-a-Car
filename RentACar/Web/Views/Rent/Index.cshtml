@@ -1,0 +1,45 @@
+﻿@model Web.CustomerReference.Customer
+@{
+    ViewBag.Title = "Kirala";
+    Web.VehicleReference.VehicleInformation vehicle = (Web.VehicleReference.VehicleInformation)TempData["vehicle"];
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Araç Bilgileri</h2>
+    </div>
+    <div class="col-md-6">
+        <h2>Müşteri Bilgileri</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="jumbotron">
+            <p>Marka: @vehicle.Name</p>
+            <p>Model: @vehicle.Model</p>
+            <p>Günlük Kiralama Bedeli: @vehicle.DailyRentalPrice ₺</p>
+            <p>Minimum Ehliyet Yaşı: @vehicle.MinLicenseAge</p>
+            <p>Minimum Sürücü Yaşı: @vehicle.MinAge</p>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="jumbotron">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+            <form>
+                <p>İsim: @Html.TextBoxFor(model => model.Name, new { placeholder = "Ad", type = "text" }) </p>
+                <p>Soyisim: @Html.TextBoxFor(model => model.Surname, new { placeholder = "Soyad", type = "text" })</p>
+                <p>TC: @Html.TextBoxFor(model => model.TCNumber, new { placeholder = "TC Kimlik Numarası", type = "number", min = "0" })</p>
+                <p>Kaç gün kiralanacak?: <input type="number" id="howManyDays" name="howManyDays" style="width: 4em" min="0"/></p>
+
+                <input type="hidden" id="vehicleId" value="@vehicle.Id" name="vehicleId" />
+                <input type="submit" class="fadeIn fourth" value="Kiralama isteği gönder">
+            </form>
+            }
+        </div>
+    </div>
+</div>

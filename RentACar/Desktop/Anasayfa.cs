@@ -55,8 +55,6 @@ namespace Desktop
             MdiFormsShow(MdiFormsStyle(new MusteriIstekleri()));
         }
 
-        
-
         private void AracListeleme_Click(object sender, EventArgs e)
         {
             MdiFormsClose();

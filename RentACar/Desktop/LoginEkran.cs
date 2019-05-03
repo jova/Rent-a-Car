@@ -35,7 +35,7 @@ namespace Desktop
             }
             else
             {
-                MessageBox.Show("Giriş Başarısız");
+                MessageBox.Show("Giriş Başarısız. DB güncellemeyi deneyin.");
             }
 
         }
@@ -44,6 +44,7 @@ namespace Desktop
         {
             IFillDatabaseService service = Business.IOCUtil.Resolve<IFillDatabaseService>();
             service.Fill();
+            MessageBox.Show("güncellendi.");
         }
     }
 }

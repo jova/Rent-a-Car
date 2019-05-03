@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccess.Abstract;
+using System.Web.Security;
 
 namespace Business.Concete
 {
@@ -35,7 +36,7 @@ namespace Business.Concete
             User user = new User();
             user.Id = 1;
             user.UserName = "admin";
-            user.UserPassword = "admin";
+            user.UserPassword = FormsAuthentication.HashPasswordForStoringInConfigFile("admin", "MD5"); ;
 
             VehicleInformation vehicleInformation1 = new VehicleInformation();
             vehicleInformation1.Id = 1;
