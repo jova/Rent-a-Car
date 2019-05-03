@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Desktop.VehicleServiceReference;
 
 namespace Desktop
 {
@@ -15,6 +16,14 @@ namespace Desktop
         public SirketAracDurumListeleme()
         {
             InitializeComponent();
+
+
+         
+
+
+            VehicleServiceServiceSoapClient Vehicle = new VehicleServiceServiceSoapClient();
+            dataGridDurumBilgisi.DataSource = (object)Vehicle.GetAll();
+
         }
     }
 }

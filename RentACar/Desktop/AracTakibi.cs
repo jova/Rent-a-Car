@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Desktop.VehicleServiceReference;
 
 namespace Desktop
 {
@@ -15,6 +16,10 @@ namespace Desktop
         public AracTakibi()
         {
             InitializeComponent();
+
+            VehicleServiceServiceSoapClient vehicle = new VehicleServiceServiceSoapClient();
+           dataGridAracTakip.DataSource = (object)vehicle.GetAll();
+
         }
     }
 }

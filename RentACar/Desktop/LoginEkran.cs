@@ -27,7 +27,7 @@ namespace Desktop
 
             bool secenek = proxy.Login(kullanici,sifre);
 
-            if (secenek)
+            if (secenek==true)
             {
                 Anasayfa anasayfa = new Anasayfa();
                 anasayfa.Show();
