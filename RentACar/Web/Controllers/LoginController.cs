@@ -37,7 +37,6 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Index(User user)
         {
-            user.UserPassword = FormsAuthentication.HashPasswordForStoringInConfigFile(user.UserPassword, "MD5");
             bool result = loginService.Login(user.UserName, user.UserPassword);
 
             if (result)

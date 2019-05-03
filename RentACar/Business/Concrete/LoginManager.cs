@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Security;
 
 namespace Business.Concete
 {
@@ -24,6 +25,7 @@ namespace Business.Concete
 
             if (user == null) return false;
 
+            user.UserPassword = FormsAuthentication.HashPasswordForStoringInConfigFile(password, "MD5");
             if (user.UserPassword == password) return true;
             else return false;
         }
