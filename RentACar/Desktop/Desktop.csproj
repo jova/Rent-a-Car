@@ -90,6 +90,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Models\RentRequestViewModel.cs" />
     <Compile Include="MusteriIstekleri.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +150,18 @@
     <None Include="Connected Services\MusteriServiceReference\Desktop.MusteriServiceReference.AddResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\MusteriServiceReference\Desktop.MusteriServiceReference.Customer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MusteriServiceReference\Desktop.MusteriServiceReference.GetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MusteriServiceReference\Desktop.MusteriServiceReference.Rentalinformation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MusteriServiceReference\Desktop.MusteriServiceReference.RentRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\RentServiceReference\Desktop.RentServiceReference.GetAllResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -196,12 +209,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\MusteriServiceReference\configuration91.svcinfo" />
-    <None Include="Connected Services\MusteriServiceReference\configuration.svcinfo" />
-    <None Include="Connected Services\MusteriServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Connected Services\RentServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\RentServiceReference\configuration.svcinfo" />
     <None Include="Connected Services\RentServiceReference\Reference.svcmap">
@@ -211,6 +218,13 @@
     <None Include="Connected Services\VehicleServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\VehicleServiceReference\configuration.svcinfo" />
     <None Include="Connected Services\VehicleServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\MusteriServiceReference\CustomerService.disco" />
+    <None Include="Connected Services\MusteriServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\MusteriServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\MusteriServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

@@ -77,6 +77,7 @@
             this.dataGridDurumBilgisi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridDurumBilgisi.Size = new System.Drawing.Size(634, 142);
             this.dataGridDurumBilgisi.TabIndex = 51;
+            this.dataGridDurumBilgisi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridDurumBilgisi_CellContentClick);
             // 
             // SirketAracDurumListeleme
             // 

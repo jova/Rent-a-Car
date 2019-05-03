@@ -15,6 +15,155 @@ namespace Desktop.MusteriServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Rentalinformation", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class Rentalinformation : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdField;
+        
+        private int HowManyDaysField;
+        
+        private int StartKmField;
+        
+        private int LastKmField;
+        
+        private int PaymentField;
+        
+        private bool IsActiveField;
+        
+        private int VehicleIDField;
+        
+        private int CustomerIDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public int HowManyDays {
+            get {
+                return this.HowManyDaysField;
+            }
+            set {
+                if ((this.HowManyDaysField.Equals(value) != true)) {
+                    this.HowManyDaysField = value;
+                    this.RaisePropertyChanged("HowManyDays");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int StartKm {
+            get {
+                return this.StartKmField;
+            }
+            set {
+                if ((this.StartKmField.Equals(value) != true)) {
+                    this.StartKmField = value;
+                    this.RaisePropertyChanged("StartKm");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int LastKm {
+            get {
+                return this.LastKmField;
+            }
+            set {
+                if ((this.LastKmField.Equals(value) != true)) {
+                    this.LastKmField = value;
+                    this.RaisePropertyChanged("LastKm");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public int Payment {
+            get {
+                return this.PaymentField;
+            }
+            set {
+                if ((this.PaymentField.Equals(value) != true)) {
+                    this.PaymentField = value;
+                    this.RaisePropertyChanged("Payment");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public bool IsActive {
+            get {
+                return this.IsActiveField;
+            }
+            set {
+                if ((this.IsActiveField.Equals(value) != true)) {
+                    this.IsActiveField = value;
+                    this.RaisePropertyChanged("IsActive");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public int VehicleID {
+            get {
+                return this.VehicleIDField;
+            }
+            set {
+                if ((this.VehicleIDField.Equals(value) != true)) {
+                    this.VehicleIDField = value;
+                    this.RaisePropertyChanged("VehicleID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public int CustomerID {
+            get {
+                return this.CustomerIDField;
+            }
+            set {
+                if ((this.CustomerIDField.Equals(value) != true)) {
+                    this.CustomerIDField = value;
+                    this.RaisePropertyChanged("CustomerID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Customer", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
     public partial class Customer : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -123,12 +272,102 @@ namespace Desktop.MusteriServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MusteriServiceReference.CustomerServiceSoap")]
     public interface CustomerServiceSoap {
         
+        // CODEGEN: Generating message contract since element name RentRequestResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RentRequest", ReplyAction="*")]
+        Desktop.MusteriServiceReference.RentRequestResponse RentRequest(Desktop.MusteriServiceReference.RentRequestRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RentRequest", ReplyAction="*")]
+        System.Threading.Tasks.Task<Desktop.MusteriServiceReference.RentRequestResponse> RentRequestAsync(Desktop.MusteriServiceReference.RentRequestRequest request);
+        
         // CODEGEN: Generating message contract since element name customer from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Add", ReplyAction="*")]
         Desktop.MusteriServiceReference.AddResponse Add(Desktop.MusteriServiceReference.AddRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Add", ReplyAction="*")]
         System.Threading.Tasks.Task<Desktop.MusteriServiceReference.AddResponse> AddAsync(Desktop.MusteriServiceReference.AddRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Get", ReplyAction="*")]
+        Desktop.MusteriServiceReference.GetResponse Get(Desktop.MusteriServiceReference.GetRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Get", ReplyAction="*")]
+        System.Threading.Tasks.Task<Desktop.MusteriServiceReference.GetResponse> GetAsync(Desktop.MusteriServiceReference.GetRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class RentRequestRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="RentRequest", Namespace="http://tempuri.org/", Order=0)]
+        public Desktop.MusteriServiceReference.RentRequestRequestBody Body;
+        
+        public RentRequestRequest() {
+        }
+        
+        public RentRequestRequest(Desktop.MusteriServiceReference.RentRequestRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class RentRequestRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int TCNumber;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int vehicleId;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int howManyDays;
+        
+        public RentRequestRequestBody() {
+        }
+        
+        public RentRequestRequestBody(int TCNumber, int vehicleId, int howManyDays) {
+            this.TCNumber = TCNumber;
+            this.vehicleId = vehicleId;
+            this.howManyDays = howManyDays;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class RentRequestResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="RentRequestResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Desktop.MusteriServiceReference.RentRequestResponseBody Body;
+        
+        public RentRequestResponse() {
+        }
+        
+        public RentRequestResponse(Desktop.MusteriServiceReference.RentRequestResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class RentRequestResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Desktop.MusteriServiceReference.Rentalinformation RentRequestResult;
+        
+        public RentRequestResponseBody() {
+        }
+        
+        public RentRequestResponseBody(Desktop.MusteriServiceReference.Rentalinformation RentRequestResult) {
+            this.RentRequestResult = RentRequestResult;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -192,6 +431,74 @@ namespace Desktop.MusteriServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Get", Namespace="http://tempuri.org/", Order=0)]
+        public Desktop.MusteriServiceReference.GetRequestBody Body;
+        
+        public GetRequest() {
+        }
+        
+        public GetRequest(Desktop.MusteriServiceReference.GetRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int customerId;
+        
+        public GetRequestBody() {
+        }
+        
+        public GetRequestBody(int customerId) {
+            this.customerId = customerId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Desktop.MusteriServiceReference.GetResponseBody Body;
+        
+        public GetResponse() {
+        }
+        
+        public GetResponse(Desktop.MusteriServiceReference.GetResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Desktop.MusteriServiceReference.Customer GetResult;
+        
+        public GetResponseBody() {
+        }
+        
+        public GetResponseBody(Desktop.MusteriServiceReference.Customer GetResult) {
+            this.GetResult = GetResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface CustomerServiceSoapChannel : Desktop.MusteriServiceReference.CustomerServiceSoap, System.ServiceModel.IClientChannel {
     }
@@ -220,6 +527,35 @@ namespace Desktop.MusteriServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Desktop.MusteriServiceReference.RentRequestResponse Desktop.MusteriServiceReference.CustomerServiceSoap.RentRequest(Desktop.MusteriServiceReference.RentRequestRequest request) {
+            return base.Channel.RentRequest(request);
+        }
+        
+        public Desktop.MusteriServiceReference.Rentalinformation RentRequest(int TCNumber, int vehicleId, int howManyDays) {
+            Desktop.MusteriServiceReference.RentRequestRequest inValue = new Desktop.MusteriServiceReference.RentRequestRequest();
+            inValue.Body = new Desktop.MusteriServiceReference.RentRequestRequestBody();
+            inValue.Body.TCNumber = TCNumber;
+            inValue.Body.vehicleId = vehicleId;
+            inValue.Body.howManyDays = howManyDays;
+            Desktop.MusteriServiceReference.RentRequestResponse retVal = ((Desktop.MusteriServiceReference.CustomerServiceSoap)(this)).RentRequest(inValue);
+            return retVal.Body.RentRequestResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Desktop.MusteriServiceReference.RentRequestResponse> Desktop.MusteriServiceReference.CustomerServiceSoap.RentRequestAsync(Desktop.MusteriServiceReference.RentRequestRequest request) {
+            return base.Channel.RentRequestAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Desktop.MusteriServiceReference.RentRequestResponse> RentRequestAsync(int TCNumber, int vehicleId, int howManyDays) {
+            Desktop.MusteriServiceReference.RentRequestRequest inValue = new Desktop.MusteriServiceReference.RentRequestRequest();
+            inValue.Body = new Desktop.MusteriServiceReference.RentRequestRequestBody();
+            inValue.Body.TCNumber = TCNumber;
+            inValue.Body.vehicleId = vehicleId;
+            inValue.Body.howManyDays = howManyDays;
+            return ((Desktop.MusteriServiceReference.CustomerServiceSoap)(this)).RentRequestAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Desktop.MusteriServiceReference.AddResponse Desktop.MusteriServiceReference.CustomerServiceSoap.Add(Desktop.MusteriServiceReference.AddRequest request) {
             return base.Channel.Add(request);
         }
@@ -241,6 +577,31 @@ namespace Desktop.MusteriServiceReference {
             inValue.Body = new Desktop.MusteriServiceReference.AddRequestBody();
             inValue.Body.customer = customer;
             return ((Desktop.MusteriServiceReference.CustomerServiceSoap)(this)).AddAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Desktop.MusteriServiceReference.GetResponse Desktop.MusteriServiceReference.CustomerServiceSoap.Get(Desktop.MusteriServiceReference.GetRequest request) {
+            return base.Channel.Get(request);
+        }
+        
+        public Desktop.MusteriServiceReference.Customer Get(int customerId) {
+            Desktop.MusteriServiceReference.GetRequest inValue = new Desktop.MusteriServiceReference.GetRequest();
+            inValue.Body = new Desktop.MusteriServiceReference.GetRequestBody();
+            inValue.Body.customerId = customerId;
+            Desktop.MusteriServiceReference.GetResponse retVal = ((Desktop.MusteriServiceReference.CustomerServiceSoap)(this)).Get(inValue);
+            return retVal.Body.GetResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Desktop.MusteriServiceReference.GetResponse> Desktop.MusteriServiceReference.CustomerServiceSoap.GetAsync(Desktop.MusteriServiceReference.GetRequest request) {
+            return base.Channel.GetAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Desktop.MusteriServiceReference.GetResponse> GetAsync(int customerId) {
+            Desktop.MusteriServiceReference.GetRequest inValue = new Desktop.MusteriServiceReference.GetRequest();
+            inValue.Body = new Desktop.MusteriServiceReference.GetRequestBody();
+            inValue.Body.customerId = customerId;
+            return ((Desktop.MusteriServiceReference.CustomerServiceSoap)(this)).GetAsync(inValue);
         }
     }
 }

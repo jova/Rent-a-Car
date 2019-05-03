@@ -25,5 +25,10 @@ namespace Desktop
             dataGridDurumBilgisi.DataSource = (object)Vehicle.GetAll();
 
         }
+
+        private void dataGridDurumBilgisi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
