@@ -17,6 +17,7 @@ namespace Entities
         public int MinLicenseAge { get; set; }
         public int MinAge { get; set; }
         public int DailyBorderKm { get; set; }
+        public int DailyLimitKm { get; set; }
         public bool Airbag { get; set; }
         public int BaggageVolume { get; set; }
         public int SeatingCapacity { get; set; }

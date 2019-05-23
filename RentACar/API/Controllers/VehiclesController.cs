@@ -126,17 +126,22 @@ namespace API.Controllers
         public IHttpActionResult GetLastKms(int id)
         {
             List<LastKm> lastKms = lastKmService.GetVehicleKms(id).Where(x => x.Date < DateTime.Now.AddMonths(1)).ToList();
+            VehicleInformation vehicle = vehicleService.Get(id);
 
             List<string> vehicleNames = new List<string>();
             List<int> rentCount = new List<int>();
+            List<string> bgColors = new List<string>();
 
             foreach (LastKm lastKm in lastKms)
             {
                 vehicleNames.Add(lastKm.Date.Value.ToShortDateString());
                 rentCount.Add(lastKm.Km);
+
+                if (lastKm.Km > vehicle.DailyLimitKm) bgColors.Add("rgba(231, 13, 13, 0.4)");
+                else bgColors.Add("rgba(191, 240, 142, 0.4)");
             }
 
-            return Ok(new { label = vehicleNames.ToArray(), data = rentCount.ToArray(), bgColor = colors, title = "Son 30 günde yapılan günlük km" });
+            return Ok(new { label = vehicleNames.ToArray(), data = rentCount.ToArray(), bgColor = bgColors.ToArray(), title = "Son 30 günde yapılan günlük km" });
         }
 
     }

@@ -11,5 +11,6 @@ namespace Business.Abstract
     {
         List<LastKm> GetVehicleKms(int vehicleId);
         List<LastKm> GetAll();
+        void Add(LastKm lastKm);
     }
 }

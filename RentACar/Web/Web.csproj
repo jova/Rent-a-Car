@@ -182,6 +182,8 @@
     <Content Include="Views\Login\Admin.cshtml" />
     <Content Include="Views\Rent\Index.cshtml" />
     <Content Include="Views\Vehicle\Index.cshtml" />
+    <Content Include="Views\Login\Invoice.cshtml" />
+    <Content Include="Views\Shared\_InvoiceLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

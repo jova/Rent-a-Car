@@ -1,0 +1,81 @@
+﻿@model Entities.Models.InvoiceModel
+@{
+    ViewBag.Title = "FATURA";
+    Layout = "~/Views/Shared/_InvoiceLayout.cshtml";
+}
+
+@if (Model.customer != null)
+{
+<div class="container-fluid">
+
+    <table id="invoice" class="table table-striped table-bordered">
+
+        <thead>
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>TCKN</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>@Model.customer.Name</td>
+                <td>@Model.customer.Surname</td>
+                <td>@Model.customer.TCNumber</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table id="invoice" class="table table-striped table-bordered">
+
+        <thead>
+            <tr>
+                <th>Kiralanan Araç Adeti</th>
+                <th>Kiralanan Gün</th>
+                <th>Harcanan Tutar</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>@Model.Rents</td>
+                <td>@Model.RentedDays</td>
+                <td>@Model.Spent ₺</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h5 align="center">KİRALANAN ARAÇLAR</h5>
+    <table id="invoice" class="table table-striped table-bordered">
+
+        <thead>
+            <tr>
+                <th>Marka</th>
+                <th>Model</th>
+                <th>Günlük Kiralama Bedeli (₺)</th>
+                <th>Minimum Ehliyet Yaşı</th>
+                <th>Minimum Sürücü Yaşı</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (Entities.VehicleInformation vehicle in (List<Entities.VehicleInformation>)Model.RentedVehicles)
+            {
+                <tr id=@vehicle.Id>
+                    <td>@vehicle.Name</td>
+                    <td>@vehicle.Model</td>
+                    <td>@vehicle.DailyRentalPrice</td>
+                    <td>@vehicle.MinLicenseAge</td>
+                    <td>@vehicle.MinAge</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+}
+else
+{
+    <h2>Müşteri bulunamadı.</h2>
+}

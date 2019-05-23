@@ -18,6 +18,11 @@ namespace Business.Concrete
             this.lastKmDal = lastKmDal;
         }
 
+        public void Add(LastKm lastKm)
+        {
+            lastKmDal.Add(lastKm);
+        }
+
         public List<LastKm> GetAll()
         {
             return lastKmDal.GetList();

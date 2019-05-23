@@ -81,4 +81,13 @@
             }
         });
 
+
+    $("#getInvoice").on("click", function () {
+
+        var value = $("#customerTc").val();
+        window.location.href = "/Login/Invoice?tc=" + value;
+
+    });
+
+
 });

@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Entities;
+using Entities.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +15,16 @@ namespace API.Controllers
     public class CustomersController : ApiController
     {
         ICustomerService customerService;
+        IRentService rentService;
+        IVehicleService vehicleService;
+        ILastKmService lastKmService;
 
         public CustomersController()
         {
             customerService = Business.IOCUtil.Resolve<ICustomerService>();
+            rentService = Business.IOCUtil.Resolve<IRentService>();
+            vehicleService = Business.IOCUtil.Resolve<IVehicleService>();
+            lastKmService = Business.IOCUtil.Resolve<ILastKmService>();
         }
 
         // GET api/customers/5
@@ -47,6 +54,33 @@ namespace API.Controllers
             Rentalinformation rentalinformation = customerService.RentRequest(TCNumber, vehicleId, howManyDays);
 
             return rentalinformation;
+        }
+
+        // GET api/Customers/Invoice?tc=
+        [System.Web.Http.Route("api/Customers/Invoice")]
+        [System.Web.Http.HttpGet]
+        public InvoiceModel Invoice(int tc)
+        {
+            Customer customer = customerService.GetList().SingleOrDefault(x => x.TCNumber == tc);
+
+            if (customer == null) return null;
+
+            InvoiceModel invoiceModel = new InvoiceModel();
+            List<Rentalinformation> rents = rentService.GetAll().Where(x => x.CustomerID == customer.Id).ToList();
+
+            invoiceModel.customer = customer;
+            invoiceModel.Rents = rents.Count;
+            invoiceModel.RentedDays = rents.Sum(x => x.HowManyDays);
+            invoiceModel.Spent = rents.Sum(x => x.Payment);
+            invoiceModel.RentedVehicles = new List<VehicleInformation>();
+
+            foreach (Rentalinformation rent in rents)
+            {
+                VehicleInformation vehicle = vehicleService.Get(rent.VehicleID);
+                invoiceModel.RentedVehicles.Add(vehicle);
+            }
+
+            return invoiceModel;
         }
     }
 }

@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{BF6FC7B4-ACA3-4B58-8708-C0A93228E562}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddKm", "AddKm\AddKm.csproj", "{AF039C47-30D5-44CF-86D0-57AF721D5F89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{BF6FC7B4-ACA3-4B58-8708-C0A93228E562}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF6FC7B4-ACA3-4B58-8708-C0A93228E562}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF6FC7B4-ACA3-4B58-8708-C0A93228E562}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF039C47-30D5-44CF-86D0-57AF721D5F89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF039C47-30D5-44CF-86D0-57AF721D5F89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF039C47-30D5-44CF-86D0-57AF721D5F89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF039C47-30D5-44CF-86D0-57AF721D5F89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

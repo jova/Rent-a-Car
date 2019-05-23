@@ -45,7 +45,8 @@ namespace Business.Concete
             vehicleInformation1.Address = "Saadetdere Mahallesi 84. Sokak No:2/4 Avcılar/İstanbul";
             vehicleInformation1.MinLicenseAge = 2;
             vehicleInformation1.MinAge = 20;
-            vehicleInformation1.DailyBorderKm = 750;
+            vehicleInformation1.DailyBorderKm = 13350;
+            vehicleInformation1.DailyLimitKm = 5000;
             vehicleInformation1.Airbag = true;
             vehicleInformation1.BaggageVolume = 400;
             vehicleInformation1.SeatingCapacity = 5;
@@ -61,7 +62,8 @@ namespace Business.Concete
             vehicleInformation2.Address = "Mustafa Kemal Paşa Mahallesi Anafartalar Sokak No:80/40 Turgutlu/Manisa";
             vehicleInformation2.MinLicenseAge = 2;
             vehicleInformation2.MinAge = 20;
-            vehicleInformation2.DailyBorderKm = 850;
+            vehicleInformation2.DailyBorderKm = 25451;
+            vehicleInformation1.DailyLimitKm = 2000;
             vehicleInformation2.Airbag = true;
             vehicleInformation2.BaggageVolume = 380;
             vehicleInformation2.SeatingCapacity = 5;
@@ -77,7 +79,8 @@ namespace Business.Concete
             vehicleInformation3.Address = "Süleyman Seba Mahallesi Şeref Sokak No:19/03 Beşiktaş/İstanbul";
             vehicleInformation3.MinLicenseAge = 2;
             vehicleInformation3.MinAge = 20;
-            vehicleInformation3.DailyBorderKm = 1200;
+            vehicleInformation3.DailyBorderKm = 4582;
+            vehicleInformation1.DailyLimitKm = 750;
             vehicleInformation3.Airbag = true;
             vehicleInformation3.BaggageVolume = 180;
             vehicleInformation3.SeatingCapacity = 2;
@@ -94,6 +97,7 @@ namespace Business.Concete
             vehicleInformation4.MinLicenseAge = 2;
             vehicleInformation4.MinAge = 20;
             vehicleInformation4.DailyBorderKm = 1400;
+            vehicleInformation1.DailyLimitKm = 500;
             vehicleInformation4.Airbag = true;
             vehicleInformation4.BaggageVolume = 140;
             vehicleInformation4.SeatingCapacity = 2;
@@ -109,7 +113,8 @@ namespace Business.Concete
             vehicleInformation5.Address = "Su Mahallesi 4. Sokak No:8/2 Kızılay/Ankara";
             vehicleInformation5.MinLicenseAge = 0;
             vehicleInformation5.MinAge = 18;
-            vehicleInformation5.DailyBorderKm = 500;
+            vehicleInformation5.DailyBorderKm = 85052;
+            vehicleInformation1.DailyLimitKm = 7000;
             vehicleInformation5.Airbag = false;
             vehicleInformation5.BaggageVolume = 200;
             vehicleInformation5.SeatingCapacity = 5;

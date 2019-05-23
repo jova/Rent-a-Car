@@ -127,5 +127,15 @@ namespace Web.Controllers
 
             return Redirect("/Login/Admin");
         }
+
+        public ActionResult Invoice(int tc)
+        {
+            HttpResponseMessage response = client.GetAsync("api/Customers/Invoice?tc=" + tc).Result;
+            InvoiceModel invoiceModel = response.Content.ReadAsAsync<InvoiceModel>().Result;
+
+            if (invoiceModel ==  null) return HttpNotFound();
+
+            return View(invoiceModel);
+        }
     }
 }
