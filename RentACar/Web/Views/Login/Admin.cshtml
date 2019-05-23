@@ -2,6 +2,38 @@
     ViewBag.Title = "Admin";
 }
 
+<script src="~/Scripts/Chart.js/Chart.js"></script>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Aylık Kazanç</h2>
+    </div>
+</div>
+
+<div class="jumbotron">
+    <canvas id="chartAylikKazanc" width="2" height="1"></canvas>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Araç Takip</h2>
+    </div>
+</div>
+
+<div class="jumbotron">
+    <canvas id="chartAracTakip" width="2" height="1"></canvas>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Araç Kilometreleri</h2>
+    </div>
+</div>
+
+<div class="jumbotron">
+    <canvas id="chartAracKm" width="2" height="1"></canvas>
+</div>
+
 <div class="row">
     <div class="col-md-12">
         <h2>Kiralama İstekleri</h2>
@@ -25,34 +57,34 @@
         <tbody>
             @foreach (Web.Models.RentRequestViewModel rent in (List<Web.Models.RentRequestViewModel>)TempData["rentRequests"])
             {
-            <tr id=@rent.Id>
-                <td>@rent.CustomerName</td>
-                <td>@rent.TCNumber</td>
-                <td>@rent.VehicleName</td>
-                <td>@rent.HowManyDays</td>
-                <td>
-                    @using (Html.BeginForm())
-                    {
-                        @Html.AntiForgeryToken()
-                        <form>
-                            <input type="hidden" value="1" name="response"/>
-                            <input type="hidden" value="@rent.Id" name="rentId"/>
-                            <button type="submit" class="btn btn-outline-primary btn-sm">Onayla</button>
-                        </form>
-                    }
-                </td>
-                <td>
-                    @using (Html.BeginForm())
-                    {
-                        @Html.AntiForgeryToken()
-                    <form>
-                        <input type="hidden" value="0" name="response" />
-                        <input type="hidden" value="@rent.Id" name="rentId" />
-                        <button type="submit" class="btn btn-outline-primary btn-sm">Reddet</button>
-                    </form>
-                    }
-                </td>
-            </tr>
+                <tr id=@rent.Id>
+                    <td>@rent.CustomerName</td>
+                    <td>@rent.TCNumber</td>
+                    <td>@rent.VehicleName</td>
+                    <td>@rent.HowManyDays</td>
+                    <td>
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+                            <form>
+                                <input type="hidden" value="1" name="response" />
+                                <input type="hidden" value="@rent.Id" name="rentId" />
+                                <button type="submit" class="btn btn-outline-primary btn-sm">Onayla</button>
+                            </form>
+                        }
+                    </td>
+                    <td>
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+                            <form>
+                                <input type="hidden" value="0" name="response" />
+                                <input type="hidden" value="@rent.Id" name="rentId" />
+                                <button type="submit" class="btn btn-outline-primary btn-sm">Reddet</button>
+                            </form>
+                        }
+                    </td>
+                </tr>
             }
         </tbody>
     </table>
@@ -81,23 +113,23 @@
         <tbody>
             @foreach (Web.Models.RentRequestViewModel rent in (List<Web.Models.RentRequestViewModel>)TempData["rents"])
             {
-            <tr id=@rent.Id>
-                <td>@rent.CustomerName</td>
-                <td>@rent.TCNumber</td>
-                <td>@rent.VehicleName</td>
-                <td>@rent.HowManyDays</td>
-                <td>
-                    @using (Html.BeginForm())
-                    {
-                        @Html.AntiForgeryToken()
-                        <form>
-                            <input type="hidden" value="0" name="response" />
-                            <input type="hidden" value="@rent.Id" name="rentId" />
-                            <button type="submit" class="btn btn-outline-primary btn-sm">Iptal Et</button>
-                        </form>
-                    }
-                </td>
-            </tr>
+                <tr id=@rent.Id>
+                    <td>@rent.CustomerName</td>
+                    <td>@rent.TCNumber</td>
+                    <td>@rent.VehicleName</td>
+                    <td>@rent.HowManyDays</td>
+                    <td>
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+                            <form>
+                                <input type="hidden" value="0" name="response" />
+                                <input type="hidden" value="@rent.Id" name="rentId" />
+                                <button type="submit" class="btn btn-outline-primary btn-sm">Iptal Et</button>
+                            </form>
+                        }
+                    </td>
+                </tr>
             }
         </tbody>
     </table>
@@ -139,3 +171,5 @@
         </tbody>
     </table>
 </div>
+
+<script src="~/Scripts/mychart.js"></script>

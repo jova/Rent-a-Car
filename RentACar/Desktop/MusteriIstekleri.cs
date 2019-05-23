@@ -40,7 +40,7 @@ namespace Desktop
             foreach (var rent in rents)
             { //customer get eklemis
                 MusteriServiceReference.Customer cust = CustomerService.Get(rent.CustomerID);
-                VehicleServiceReference.VehicleInformation vehicle = vehicleService.Get(rent.CustomerID);
+                VehicleServiceReference.VehicleInformation vehicle = vehicleService.Get(rent.VehicleID);
 
                 Models.RentRequestViewModel req = new Models.RentRequestViewModel();
                 req.Id = rent.Id;

@@ -23,7 +23,7 @@ namespace Service
 
         public VehicleServiceService()
         {
-            VehicleService= Business.IOCUtil.Resolve<IVehicleService>();
+            VehicleService = Business.IOCUtil.Resolve<IVehicleService>();
         }
 
         [WebMethod]
