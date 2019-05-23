@@ -13,11 +13,13 @@ namespace Business.Concete
     {
         IVehicleInformationDal vehicleDal;
         IRentalinformationDal rentalDal;
+        ICompanyDal companyDal;
 
         public VehicleManager()
         {
             vehicleDal = IOCUtil.Resolve<IVehicleInformationDal>();
             rentalDal = IOCUtil.Resolve<IRentalinformationDal>();
+            companyDal = IOCUtil.Resolve<ICompanyDal>();
         }
 
         public VehicleInformation Get(int vehicleId)
@@ -41,13 +43,25 @@ namespace Business.Concete
             if (vehicle == null) return false;
 
             rental.IsActive = true;
+            rental.IsRequest = false;
+            rental.StartDate = DateTime.Now;
             rentalDal.Update(rental);
 
             List<Rentalinformation> rents = rentalDal.GetList(x => x.Id != rental.Id && x.VehicleID == vehicle.Id);
             foreach (var rent in rents)
             {
-                rentalDal.Delete(rent);
+                rent.IsActive = false;
+                rent.IsRequest = false;
+                rent.FinishDate = DateTime.Now;
+
+                rentalDal.Update(rent);
             }
+
+            Company company = companyDal.Get(x => x.Id == 1);
+            company.Earning += rental.Payment;
+            company.Expense -= (100 * rental.HowManyDays);
+
+            companyDal.Update(company);
 
             vehicle.CustomerID = customerId;
             vehicle.isRentaled = true;
@@ -59,7 +73,11 @@ namespace Business.Concete
         public bool UnRentACar(int rentId)
         {
             Rentalinformation rental = rentalDal.Get(x => x.Id == rentId);
-            rentalDal.Delete(rental);
+            if (rental.IsRequest) rental.CustomerID = 0; //istek reddedilirse aracın customeri sıfırla.
+            rental.IsActive = false;
+            rental.IsRequest = false;
+            rental.FinishDate = DateTime.Now;
+            rentalDal.Update(rental);
 
             VehicleInformation vehicle = Get(rental.VehicleID);
 

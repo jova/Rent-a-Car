@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Business.Abstract;
 using Business.Concete;
+using Business.Concrete;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using DataAccess.Abstract;
@@ -26,12 +27,15 @@ namespace Business
                 Component.For<IRentalinformationDal>().ImplementedBy<RentalinformationDal>(),          
                 Component.For<IUserDal>().ImplementedBy<UserDal>(),
                 Component.For<IVehicleInformationDal>().ImplementedBy<VehicleInformationDal>(),
+                Component.For<ILastKmDal>().ImplementedBy<LastKmDal>(),
 
                 Component.For<IFillDatabaseService>().ImplementedBy<FillDatabase>(),
                 Component.For<ILoginService>().ImplementedBy<LoginManager>(),
                 Component.For<IVehicleService>().ImplementedBy<VehicleManager>(),
                 Component.For<IRentService>().ImplementedBy<RentManager>(),
-                Component.For<ICustomerService>().ImplementedBy<CustomerManager>()
+                Component.For<ICustomerService>().ImplementedBy<CustomerManager>(),
+                Component.For<ICompanyService>().ImplementedBy<CompanyManager>(),
+                Component.For<ILastKmService>().ImplementedBy<LastKmManager>()
 
                 );
         }

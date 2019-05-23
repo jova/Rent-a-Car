@@ -27,7 +27,7 @@ namespace Business.Concete
 
             Company company = new Company();
             company.Id = 1;
-            company.Name = "ESEM";
+            company.Name = "Bayram Galeri";
             company.City = "Manisa";
             company.Address = "İstiklal Mahallesi, Piyaleoğlu Cd. D:137, 45410 Turgutlu/Manisa";
             company.VehiclesNumber = 5;
@@ -36,7 +36,7 @@ namespace Business.Concete
             User user = new User();
             user.Id = 1;
             user.UserName = "admin";
-            user.UserPassword = FormsAuthentication.HashPasswordForStoringInConfigFile("admin", "MD5"); ;
+            user.UserPassword = FormsAuthentication.HashPasswordForStoringInConfigFile("admin", "MD5");
 
             VehicleInformation vehicleInformation1 = new VehicleInformation();
             vehicleInformation1.Id = 1;

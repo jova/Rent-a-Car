@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace Business.Abstract
 {
-    public interface IRentService
+    public interface ILastKmService
     {
-        Rentalinformation Get(int rentalId);
-        List<Rentalinformation> GetAll();
-        List<Rentalinformation> GetActives();
+        List<LastKm> GetVehicleKms(int vehicleId);
+        List<LastKm> GetAll();
     }
 }

@@ -33,6 +33,11 @@ namespace Business.Concete
             return customerDal.Get(x => x.Id == customerId);
         }
 
+        public List<Customer> GetList()
+        {
+            return customerDal.GetList();
+        }
+
         public Rentalinformation RentRequest(int TCNumber, int vehicleId, int howManyDays)
         {
             Customer customer = customerDal.Get(x => x.TCNumber == TCNumber);
@@ -44,6 +49,7 @@ namespace Business.Concete
             rental.HowManyDays = howManyDays;
             rental.Payment = vehicle.DailyRentalPrice * howManyDays;
             rental.StartKm = vehicle.DailyBorderKm;
+            rental.IsRequest = true;
             rental.IsActive = false;
 
             rentDal.Add(rental);

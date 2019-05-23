@@ -15,5 +15,7 @@ namespace Entities
         public string Address { get; set; }
         public int VehiclesNumber { get; set; }
         public int Star { get; set; }
+        public int Earning { get; set; }
+        public int Expense { get; set; }
     }
 }

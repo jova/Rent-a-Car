@@ -9,21 +9,22 @@ using System.Web.Mvc;
 
 namespace Web.Controllers
 {
-    public class HomeController : Controller
+    public class VehicleController : Controller
     {
         HttpClient client = new HttpClient();
 
-        public HomeController()
+        public VehicleController()
         {
             client.BaseAddress = new Uri("http://localhost:52935/");
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public ActionResult Index()
+        public ActionResult Index(int vehicleId)
         {
-            HttpResponseMessage response = client.GetAsync("api/vehicles").Result;
-            List<VehicleInformation> vehicles = response.Content.ReadAsAsync<List<VehicleInformation>>().Result;
-            return View(vehicles);
+            HttpResponseMessage response = client.GetAsync("api/vehicles/" + vehicleId).Result;
+            VehicleInformation vehicle = response.Content.ReadAsAsync<VehicleInformation>().Result;
+
+            return View(vehicle);
         }
     }
 }

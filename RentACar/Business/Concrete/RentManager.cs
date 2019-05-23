@@ -27,5 +27,10 @@ namespace Business.Concete
         {
             return rentalDal.GetList();
         }
+
+        public List<Rentalinformation> GetActives()
+        {
+            return rentalDal.GetList(x => x.IsActive == true || x.IsRequest == true);
+        }
     }
 }

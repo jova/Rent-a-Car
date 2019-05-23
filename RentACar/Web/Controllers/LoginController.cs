@@ -5,28 +5,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Web.LoginReference;
-using Web.VehicleReference;
-using Web.CustomerReference;
-using Web.RentService;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using Web.Models;
 using System.Web.Security;
+using Entities.Models;
 
 namespace Web.Controllers
 {
     public class LoginController : Controller
     {
-        private LoginServiceSoapClient loginService;
-        private VehicleServiceServiceSoapClient vehicleService;
-        private CustomerServiceSoapClient customerService;
-        private RentServiceSoapClient rentService;
+        HttpClient client = new HttpClient();
 
         public LoginController()
         {
-            loginService = new LoginServiceSoapClient();
-            vehicleService = new VehicleServiceServiceSoapClient();
-            customerService = new CustomerServiceSoapClient();
-            rentService = new RentServiceSoapClient();
+            client.BaseAddress = new Uri("http://localhost:52935/");
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
         public ActionResult Index()
@@ -37,7 +31,11 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Index(User user)
         {
-            bool result = loginService.Login(user.UserName, user.UserPassword);
+            if(string.IsNullOrEmpty(user.UserName) || string.IsNullOrEmpty(user.UserName)) return Redirect("/");
+
+            HttpResponseMessage response = client.PostAsJsonAsync("api/login", user).Result;
+
+            bool result = response.Content.ReadAsAsync<bool>().Result;
 
             if (result)
             {
@@ -51,18 +49,25 @@ namespace Web.Controllers
         {
             if (Request.Cookies.AllKeys.Contains("loggedIn"))
             {
-                List<VehicleReference.VehicleInformation> vehicles = vehicleService.GetAll().ToList();
+                HttpResponseMessage response = client.GetAsync("api/vehicles").Result;
+                List<VehicleInformation> vehicles = response.Content.ReadAsAsync<List<VehicleInformation>>().Result;
                 TempData["vehicles"] = vehicles;
 
-                List<RentService.Rentalinformation> rents = rentService.GetAll().ToList();
+                response = client.GetAsync("api/rents").Result;
+                List<Rentalinformation> rents = response.Content.ReadAsAsync<List<Rentalinformation>>().Result;
 
                 List<RentRequestViewModel> requests = new List<RentRequestViewModel>();
                 List<RentRequestViewModel> renteds = new List<RentRequestViewModel>();
 
                 foreach (var rent in rents)
                 {
-                    CustomerReference.Customer cust = customerService.Get(rent.CustomerID);
-                    VehicleReference.VehicleInformation vehicle = vehicleService.Get(rent.VehicleID);
+                    if (rent.CustomerID == 0) continue;
+
+                    response = client.GetAsync("api/customers/" + rent.CustomerID).Result;
+                    Customer cust = response.Content.ReadAsAsync<Customer>().Result;
+
+                    response = client.GetAsync("api/vehicles/" + rent.VehicleID).Result;
+                    VehicleInformation vehicle = response.Content.ReadAsAsync<VehicleInformation>().Result;
 
                     RentRequestViewModel req = new RentRequestViewModel();
                     req.Id = rent.Id;
@@ -71,9 +76,8 @@ namespace Web.Controllers
                     req.HowManyDays = rent.HowManyDays;
                     req.VehicleName = vehicle.Name + " " + vehicle.Model;
 
-
-                    if (rent.IsActive) renteds.Add(req);
-                    else requests.Add(req);
+                    if (rent.IsRequest && !rent.IsActive) requests.Add(req);
+                    else if(rent.IsActive) renteds.Add(req);
                 }
 
                 TempData["rentRequests"] = requests;
@@ -88,35 +92,40 @@ namespace Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Admin(int rentId, int response)
+        public ActionResult Admin(int rentId, int res)
         {
-            RentService.Rentalinformation rent = rentService.Get(rentId);
+            HttpResponseMessage response = client.GetAsync("api/rents/" + rentId).Result;
+            Rentalinformation rent = response.Content.ReadAsAsync<Rentalinformation>().Result;
 
-            if (response == 1)
+            if (res == 1)
             {
-                VehicleReference.Rentalinformation tempRent = new VehicleReference.Rentalinformation()
+                Rentalinformation tempRent = new Rentalinformation()
                 {
                     CustomerID = rent.CustomerID,
-                    ExtensionData = rent.ExtensionData,
                     VehicleID = rent.VehicleID,
                     HowManyDays = rent.HowManyDays,
                     Id = rent.Id,
+                    IsRequest = rent.IsRequest,
                     IsActive = rent.IsActive,
-                    LastKm = rent.LastKm,
+                    LastKmId = rent.LastKmId,
                     Payment = rent.Payment,
                     StartKm = rent.StartKm
                 };
 
+                RentModel model = new RentModel();
+                model.rent = tempRent;
+                model.vehicleId = rent.VehicleID;
+                model.customerId = rent.CustomerID;
+
                 //kirala
-                vehicleService.RentACar(rent.VehicleID, rent.CustomerID, tempRent);
+                response = client.PostAsJsonAsync("api/vehicles/RentACar", model).Result;
             }
-            else if (response == 0)
+            else if (res == 0)
             {
-                vehicleService.UnRentACar(rent.Id);
+                response = client.GetAsync("api/vehicles/UnRentACar?id=" + rent.Id).Result;
             }
 
             return Redirect("/Login/Admin");
         }
-
     }
 }

@@ -1,4 +1,4 @@
-﻿@model List<Web.VehicleReference.VehicleInformation>
+﻿@model List<Entities.VehicleInformation>
 @{
     ViewBag.Title = "Anasayfa";
 }
@@ -24,7 +24,7 @@
         </thead>
 
         <tbody>
-            @foreach (var vehicle in Model)
+            @foreach (Entities.VehicleInformation vehicle in Model)
             {
                 if (!vehicle.isRentaled)
                 {

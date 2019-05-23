@@ -10,6 +10,7 @@ namespace DataAccess.Concrete
         public DbSet<Rentalinformation> Rentalinformations { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<VehicleInformation> VehicleInformations { get; set; }
+        public DbSet<LastKm> LastKms { get; set; }
 
         public SqlContext() :  base("Name=soaDB")
         {

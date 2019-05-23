@@ -12,5 +12,6 @@ namespace Business.Abstract
         void Add(Customer customer);
         Customer Get(int customerId);
         Rentalinformation RentRequest(int TCNumber, int vehicleId, int howManyDays);
+        List<Customer> GetList();
     }
 }

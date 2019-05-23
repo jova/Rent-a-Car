@@ -1,27 +1,29 @@
-﻿using System;
+﻿using Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Web;
 using System.Web.Mvc;
-using Web.CustomerReference;
-using Web.VehicleReference;
 
 namespace Web.Controllers
 {
     public class RentController : Controller
     {
-        VehicleServiceServiceSoapClient vehicleService;
-        CustomerServiceSoapClient customerService;
+        HttpClient client = new HttpClient();
 
         public RentController()
         {
-            vehicleService  = new VehicleServiceServiceSoapClient();
-            customerService = new CustomerServiceSoapClient();
+            client.BaseAddress = new Uri("http://localhost:52935/");
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
         public ActionResult Index(int vehicleId)
         {
-            VehicleInformation vehicle = vehicleService.Get(vehicleId);
+            HttpResponseMessage response = client.GetAsync("api/vehicles/" + vehicleId).Result;
+            VehicleInformation vehicle   = response.Content.ReadAsAsync<VehicleInformation>().Result;
+
             TempData["vehicle"] = vehicle;
 
             return View();
@@ -30,8 +32,8 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Index(Customer customer, int vehicleId, int howManyDays)
         {
-            customerService.Add(customer);
-            customerService.RentRequest(customer.TCNumber, vehicleId, howManyDays);
+            HttpResponseMessage response = client.PostAsJsonAsync("api/customers", customer).Result;
+            response = client.GetAsync("api/customers/RentRequest?TCNumber=" + customer.TCNumber + "&vehicleId=" + vehicleId + "&howManyDays=" + howManyDays).Result;
 
             return Redirect("/");
         }
